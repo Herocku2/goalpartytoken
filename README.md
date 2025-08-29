@@ -16,6 +16,11 @@ Un token ERC20 implementado usando el patrón Diamond (EIP-2535) desplegado en B
 - **Dirección**: `0x8F6db1C57fF450e891F7D67146a4c1DD0B866C62`
 - **Explorer**: [Ver en BSCScan](https://testnet.bscscan.com/address/0x8F6db1C57fF450e891F7D67146a4c1DD0B866C62)
 
+### Sistema de Preventa
+- **USDTMock**: `0xc906139A6a3f1728C0385b71300d92CeCE306D58`
+- **StandardizedPresale**: `0x344C842C5C44ED83E9dc2f09C6C60E537AD14012`
+- **Explorer Preventa**: [Ver en BSCScan](https://testnet.bscscan.com/address/0x344C842C5C44ED83E9dc2f09C6C60E537AD14012)
+
 ### Facets (Módulos)
 - **DiamondCutFacet**: `0x5E1E1D9614EB38693707f8fDbA904faDA9128021`
 - **DiamondLoupeFacet**: `0x8118BDCe105FB0c65799DEc21d0AD607DF21B245`
@@ -61,17 +66,26 @@ npm install
 # Compilar contratos
 npm run compile
 
-# Desplegar en BSC Testnet
+# Desplegar token GOAL en BSC Testnet
 npm run deploy
 
-# Verificar contratos
+# Desplegar sistema de preventa
+npm run deploy-presale
+
+# Verificar contratos principales
 npm run verify
+
+# Verificar contratos de preventa
+npm run verify-presale
 
 # Crear archivos flattened
 npm run flatten
 
-# Ejecutar tests
-npm run test
+# Probar funcionalidad del token
+npm run test-token
+
+# Probar funcionalidad de preventa
+npm run test-simple
 ```
 
 ## 🔧 Configuración
@@ -97,6 +111,32 @@ El proyecto está configurado para trabajar con:
 - ✅ Gestión de tokenomics
 - ✅ Funciones de administración
 - ✅ Seguridad anti-reentrancy
+- ✅ Sistema de preventa con tiers de precios
+- ✅ Token mock USDT para testing
+- ✅ Entrega inmediata de tokens
+
+## 🏪 Sistema de Preventa
+
+### Características de la Preventa
+- **Token de Pago**: USDT Mock (18 decimales)
+- **Token Vendido**: GOAL (7 decimales)
+- **Entrega**: Inmediata
+- **Sistema de Tiers**: Precios escalonados según monto
+
+### Tiers de Precios
+1. **Tier 1**: 0+ USDT = 0.10 USDT por GOAL
+2. **Tier 2**: 100+ USDT = 0.08 USDT por GOAL  
+3. **Tier 3**: 1000+ USDT = 0.05 USDT por GOAL
+
+### Límites
+- **Compra mínima**: 10 USDT
+- **Compra máxima**: 10,000 USDT por transacción
+- **Hard cap**: 1,000,000 USDT total
+
+### Funciones Principales
+- `buy(amountInPaymentToken, recipient)`: Comprar tokens GOAL
+- `preview(amountInPaymentToken)`: Ver cotización antes de comprar
+- `mint(to, amount)`: Mintear USDT para testing (solo owner)
 
 ## 🔐 Seguridad
 

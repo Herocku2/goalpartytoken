@@ -10,5 +10,36 @@
     "TokenomicsManagementFacet": "0x08E506a0aCab806d34377d213F5d02fECc11E75B",
     "TokenInit": "0x579Da75d4B42f89E59bF4373D8E6ed995c8BeBfd"
   },
-  "timestamp": "2025-08-29T14:17:45.684Z"
+  "timestamp": "2025-08-29T14:17:45.684Z",
+  "presale": {
+    "network": "BSC Testnet",
+    "deployer": "0x7DE35f84680022bfccd748AbB0656ff8551879Aa",
+    "contracts": {
+      "GoalToken": "0x8F6db1C57fF450e891F7D67146a4c1DD0B866C62",
+      "USDTMock": "0xc906139A6a3f1728C0385b71300d92CeCE306D58",
+      "StandardizedPresale": "0x344C842C5C44ED83E9dc2f09C6C60E537AD14012"
+    },
+    "presaleConfig": {
+      "fundsWallet": "0x7DE35f84680022bfccd748AbB0656ff8551879Aa",
+      "immediateDelivery": true,
+      "minPurchase": "10 USDT",
+      "maxPurchase": "10,000 USDT",
+      "hardCap": "1,000,000 USDT",
+      "tiers": [
+        {
+          "minSpend": "0 USDT",
+          "price": "0.10 USDT per GOAL"
+        },
+        {
+          "minSpend": "100 USDT",
+          "price": "0.08 USDT per GOAL"
+        },
+        {
+          "minSpend": "1000 USDT",
+          "price": "0.05 USDT per GOAL"
+        }
+      ]
+    },
+    "timestamp": "2025-08-29T14:37:45.860Z"
+  }
 }
