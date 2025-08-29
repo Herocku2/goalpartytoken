@@ -13,7 +13,11 @@
     "test": "hardhat test",
     "test-token": "hardhat run scripts/test-token.js --network bscTestnet",
     "test-presale": "hardhat run scripts/test-presale.js --network bscTestnet",
-    "test-simple": "hardhat run scripts/test-simple-presale.js --network bscTestnet"
+    "test-simple": "hardhat run scripts/test-simple-presale.js --network bscTestnet",
+    "buy-goal": "hardhat run scripts/buy-goal-tokens.js --network bscTestnet",
+    "setup-vesting": "hardhat run scripts/setup-vesting.js --network bscTestnet",
+    "claim-tokens": "hardhat run scripts/claim-vested-tokens.js --network bscTestnet",
+    "presale-status": "hardhat run scripts/presale-status.js --network bscTestnet"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
